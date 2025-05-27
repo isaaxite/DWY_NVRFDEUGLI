@@ -2,9 +2,13 @@
 <package version="3.0" unique-identifier="BookId" xmlns="http://www.idpf.org/2007/opf">
   <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
     <dc:identifier id="BookId">urn:uuid:20379921-bd65-4970-b72a-b4e026f5e3bc</dc:identifier>
-    <dc:language>en</dc:language>
+    <dc:language>zh</dc:language>
     <dc:title>女人的胜利</dc:title>
-    <meta property="dcterms:modified">2025-05-27T18:43:04Z</meta>
+    <dc:creator opf:file-as="余华" opf:role="aut">余华</dc:creator>
+    <dc:publisher>江苏凤凰文艺出版社</dc:publisher>
+    <meta name="calibre:title_sort" content="女人的胜利" />
+    <meta property="dcterms:modified">2024-10-01</meta>
+    <meta name="cover" content="cover" />
     <meta name="Sigil version" content="2.4.2" />
   </metadata>
   <manifest>
@@ -12,7 +16,7 @@
     <item id="sgc-nav.css" href="Styles/sgc-nav.css" media-type="text/css"/>
     <item id="nav.xhtml" href="Text/nav.xhtml" media-type="application/xhtml+xml" properties="nav"/>
     <item id="Section0002.xhtml" href="Text/Section0002.xhtml" media-type="application/xhtml+xml"/>
-    <item id="cover.jpg" href="Images/cover.jpg" media-type="image/jpeg"/>
+    <item id="cover" href="Images/cover.jpg" media-type="image/jpeg"/>
     <item id="c1-cover.jpeg" href="Images/c1-cover.jpeg" media-type="image/jpeg"/>
     <item id="Style0001.css" href="Styles/main.css" media-type="text/css"/>
     <item id="Section0003.xhtml" href="Text/Section0003.xhtml" media-type="application/xhtml+xml"/>

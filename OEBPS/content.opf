@@ -50,12 +50,12 @@
     <item id="Section0015.xhtml" href="Text/Section0015.xhtml" media-type="application/xhtml+xml"/>
   </manifest>
   <spine>
-    <itemref idref="Section0002.xhtml"/>
+    <itemref idref="Section0001.xhtml"/>
     <itemref idref="Section0003.xhtml"/>
     <itemref idref="Section0004.xhtml"/>
     <itemref idref="Section0005.xhtml"/>
     <itemref idref="Section0006.xhtml"/>
-    <itemref idref="Section0001.xhtml"/>
+    <itemref idref="Section0002.xhtml"/>
     <itemref idref="Section0007.xhtml"/>
     <itemref idref="Section0008.xhtml"/>
     <itemref idref="Section0009.xhtml"/>

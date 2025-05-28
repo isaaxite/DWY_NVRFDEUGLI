@@ -1,6 +1,8 @@
-body {
-
+.sub-header {
+  display: block;
+  text-align: center;
 }
+
 .paragraph {
 	text-indent: 2em;
 }

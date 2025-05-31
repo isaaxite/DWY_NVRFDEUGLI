@@ -48,6 +48,7 @@
     <item id="Section0014.xhtml" href="Text/Section0014.xhtml" media-type="application/xhtml+xml"/>
     <item id="c12-cover.jpeg" href="Images/c12-cover.jpeg" media-type="image/jpeg"/>
     <item id="Section0015.xhtml" href="Text/Section0015.xhtml" media-type="application/xhtml+xml"/>
+    <item id="c13-cover.jpeg" href="Images/c13-cover.jpeg" media-type="image/jpeg"/>
   </manifest>
   <spine>
     <itemref idref="Section0001.xhtml"/>

@@ -12,7 +12,7 @@
     <dc:creator id="creator">余华</dc:creator>
     <meta refines="#creator" property="role" scheme="marc:relators" id="role">aut</meta>
     <meta name="calibre:title_sort" content="女人的胜利" />
-    <meta property="dcterms:modified">2024-10-01T00:00:00Z</meta>
+    <meta property="dcterms:modified">{{lastModifyTime}}</meta>
     <meta name="cover" content="cover" />
     <meta name="Sigil version" content="2.4.2" />
   </metadata>

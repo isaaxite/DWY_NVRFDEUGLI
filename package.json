@@ -1,0 +1,22 @@
+{
+  "name": "dwy_nvrfdeugli",
+  "version": "0.0.1",
+  "description": "epub",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dist": "node ./script/build.js"
+  },
+  "keywords": [
+    "epub"
+  ],
+  "author": "isaaxite",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "execa": "^9.6.0",
+    "fs-extra": "^11.3.0",
+    "mustache": "^4.2.0"
+  }
+}

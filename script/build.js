@@ -4,36 +4,37 @@ import mustache from 'mustache';
 import { execSync } from 'child_process';
 import path from 'path';
 
-async function main() {
-  fse.ensureDirSync('./dist');
-  try {
-    fse.statSync('dist/temp');
-    fse.mkdirSync('dist/temp');
-  } catch (error) {}
-  
-  try {
-    fse.copySync('./src', './dist/temp');
-  } catch (error) {
-    console.error(error);
-  }
+async function render() {
   const { stdout: lastModifyTime } = await execa('date -u +"%Y-%m-%dT%H:%M:%SZ"', { shell: true });
- 
   const packageDoc = mustache.render(
     fse.readFileSync('src/OEBPS/content.opf', 'utf8'),
     { lastModifyTime }
   );
+  return packageDoc;
+}
 
-  fse.writeFileSync('dist/temp/OEBPS/content.opf', packageDoc);
+async function main() {
+  const EPUB_FILENAME = 'nvrfdeugli.epub';
+  const DIST_EPUB_PATH = `dist/${EPUB_FILENAME}`;
+  const TEMP_DIR = 'dist/temp';
 
-  try {
-    fse.statSync('dist/nvrfdeugli.epub');
-    fse.rmSync('dist/nvrfdeugli.epub');
-  } catch (error) {}
+  fse.ensureDirSync('./dist');
+  
+  const [packageDoc] = await Promise.all([
+    render(),
+    fse.stat(TEMP_DIR)
+      .then(() => fse.rm(TEMP_DIR, { recursive: true }))
+      .catch(() => null)
+      .then(() => fse.copy('./src', TEMP_DIR))
+      .catch(err => { throw err; }),
+    fse.stat(DIST_EPUB_PATH).then(() => fse.rm(DIST_EPUB_PATH)).catch(() => null),
+  ]);
+  
+  fse.writeFileSync(path.join(TEMP_DIR, 'OEBPS/content.opf'), packageDoc);
 
-  const tempCWD = path.join(process.cwd(), 'dist/temp');
-  execSync(`zip -X ../nvrfdeugli.epub mimetype`, { cwd: tempCWD });
-  execSync(`zip -rg ../nvrfdeugli.epub META-INF OEBPS`, { cwd: tempCWD });
-  fse.rmSync(tempCWD, { recursive: true });
+  execSync(`zip -X ../${EPUB_FILENAME} mimetype`, { cwd: TEMP_DIR });
+  execSync(`zip -rg ../${EPUB_FILENAME} META-INF OEBPS`, { cwd: TEMP_DIR });
+  fse.rmSync(TEMP_DIR, { recursive: true });
 }
 
 main();
